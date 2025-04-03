@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoFácil - Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">AutoFácil</h1>
+            <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            <ul class="menu">
+                <li><a href="#carros">Carros</a></li>
+                <li><a href="#motos">Motos</a></li>
+                <li><a href="#novos">Novos</a></li>
+                <li><a href="#usados">Usados</a></li>
+                <li><a href="#modelo">Modelo</a></li>
+                <li><a href="#ano">Ano</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="search-section">
+        <h2>Pesquise seu veículo</h2>
+        <form>
+            <input type="text" placeholder="Digite o modelo ou marca" required>
+            <button type="submit">Pesquisar</button>
+        </form>
+    </section>
+
+    <section id="carros-leilao" class="highlight-section">
+        <h2>Carros de Leilão</h2>
+        <div class="card">
+            <img src="img/lamborghini (1).png" alt="carro 1">
+            <p>Carro X - R$30.000</p>
+        </div>
+        <div class="card">
+            <img src="img/peugeot.jfif" alt="carro 1">
+            <p>Carro Y - R$25.000</p>
+        </div>
+    </section>
+
+    <section id="oferta-dia" class="highlight-section">
+        <h2>Oferta do Dia</h2>
+        <div class="offer-card">
+            <p>Carro Z - R$40.000</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+style.css
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #003f5c;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: none; /* Oculto inicialmente */
+    flex-direction: column;
+    background-color: #003f5c;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.menu.active {
+    display: flex;
+}
+
+.search-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.search-section input {
+    padding: 10px;
+    width: 300px;
+.card, .offer-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    max-width: 300px;
+    background-color: #fff;
+}
+script.js
+
+// Seleciona o botão e o menu
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+// Alterna a visibilidade do menu
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
